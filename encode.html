@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B64编码</title>
+    <script type='text/javascript'>
+        function base64Encode() {
+            document.getElementById("out").value = btoa(encodeURIComponent(document.getElementById("in").value))
+        }
+
+        function copyText() {
+            document.getElementById("out").select();
+            document.execCommand("copy");
+        }
+    </script>
+    <style>
+        textarea {
+            width: 100%;
+            height: 500px
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <label>
+        输入要转换的内容：
+        <textarea id="in" oninput="base64Encode()"></textarea>
+    </label>
+</div>
+<div>
+    <label>
+        转换结果（点击内容复制）：
+        <textarea id="out" onclick="copyText()"></textarea>
+    </label>
+</div>
+</body>
+</html>
